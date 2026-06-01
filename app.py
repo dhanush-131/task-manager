@@ -1,4 +1,5 @@
 def add_task(task):
+    print()
     with open("tasks.txt", "a") as f:
         f.write(task + "\n")
 
@@ -7,11 +8,13 @@ def view_tasks():
         print(f.read())
 
 if __name__ == "__main__":
-    print("1. Add Task\n2. View Tasks")
-    choice = input("Enter choice: ")
+    choice="0"
+    while choice!="3":
+        choice = input("Enter choice: ")
+        print("1. Add Task\n2. View Tasks\n3. Exit")
 
-    if choice == "1":
-        task = input("Enter task: ")
-        add_task(task)
-    elif choice == "2":
-        view_tasks()
+        if choice == "1":
+            task = input("Enter task: ")
+            add_task(task)
+        elif choice == "2":
+            view_tasks()
